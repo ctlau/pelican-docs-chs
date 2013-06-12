@@ -12,7 +12,7 @@ Pelican is a static site generator, written in Python_.
 Features
 --------
 
-Pelican currently supports:
+Pelican 当前支持:
 
 * Articles (e.g., blog posts) and pages (e.g., "About", "Projects", "Contact")
 * Comments, via an external service (Disqus). (Please note that while
