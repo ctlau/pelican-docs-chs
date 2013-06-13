@@ -1,30 +1,27 @@
 Pelican
 =======
 
-Pelican is a static site generator, written in Python_.
+Pelican 是一个用 Python_ 实现的静态网站生成器。
 
-* Write your content directly with your editor of choice (vim!)
-  in reStructuredText_, Markdown_, or AsciiDoc_ formats
-* Includes a simple CLI tool to (re)generate your site
-* Easy to interface with distributed version control systems and web hooks
-* Completely static output is easy to host anywhere
+* 用您选定的编辑器(如：vim_)直接写出您的内容，支持 reStructuredText_， Markdown_，和 AsciiDoc_ 格式
+* 包含一个简单的命令行工具用以(重新)生成您的站点
+* 可方便地与分布式版本控制系统和网络钩子配合使用
+* 完全静态输出，可托管在任何地方
 
-Features
---------
+特性
+----
 
 Pelican 当前支持:
 
-* Articles (e.g., blog posts) and pages (e.g., "About", "Projects", "Contact")
-* Comments, via an external service (Disqus). (Please note that while
-  useful, Disqus is an external service, and thus the comment data will be
-  somewhat outside of your control and potentially subject to data loss.)
-* Theming support (themes are created using Jinja2_ templates)
-* Publication of articles in multiple languages
-* Atom/RSS feeds
-* Code syntax highlighting
-* PDF generation of the articles/pages (optional)
-* Import from WordPress, Dotclear, or RSS feeds
-* Integration with external tools: Twitter, Google Analytics, etc. (optional)
+* 文章(如：博客帖子)和页面(如：“关于”，“项目”，“联系方式”)
+* 评论，通过一个外部服务(Disqus_)实现。(请记住：Disqus 很有用，但它是一个外部服务，因此评论数据将会多少有点脱离您的控制，同时潜在地存在数据丢失的可能性。)
+* 主题支持(主题是用 Jinja2_ 模板创建的)
+* 用多种语言发表文章
+* Atom/RSS 供稿
+* 代码语法高亮
+* 文章/页面生成PDF (可选的)
+* 从WordPress，Dotclear，或者RSS源导入
+* 集成外部工具，如：Twitter，Google Analytics等 (可选的)
 
 Why the name "Pelican"?
 -----------------------
@@ -71,9 +68,11 @@ A French version of the documentation is available at Pelican_.
 .. Links
 
 .. _Python: http://www.python.org/
+.. _vim: http://www.vim.org/
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Markdown: http://daringfireball.net/projects/markdown/
 .. _AsciiDoc: http://www.methods.co.nz/asciidoc/index.html
+.. _Disqus: https://disqus.com/
 .. _Jinja2: http://jinja.pocoo.org/
 .. _`Pelican documentation`: http://docs.getpelican.com/latest/
 .. _`Pelican's internals`: http://docs.getpelican.com/en/latest/internals.html
