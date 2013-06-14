@@ -620,7 +620,7 @@ cloud.</td>
 <p>The default theme does not support tag clouds, but it is pretty easy to add:</p>
 <div class="highlight-python"><pre>&lt;ul&gt;
     {% for tag in tag_cloud %}
-        &lt;li class="tag-{{ tag.1 }}"&gt;&lt;a href="/tag/{{ tag.0|string|replace(" ", "-" ) }}.html"&gt;{{ tag.0 }}&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;tag-{{ tag.1 }}&quot;&gt;&lt;a href=&quot;/tag/{{ tag.0|string|replace(&quot; &quot;, &quot;-&quot; ) }}.html&quot;&gt;{{ tag.0 }}&lt;/a&gt;&lt;/li&gt;
     {% endfor %}
 &lt;/ul&gt;</pre>
 </div>
