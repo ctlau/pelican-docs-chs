@@ -1,5 +1,5 @@
-Settings
-########
+设置
+####
 
 Pelican is configurable thanks to a configuration file you can pass to
 the command line::

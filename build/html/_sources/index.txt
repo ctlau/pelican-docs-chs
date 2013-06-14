@@ -23,31 +23,27 @@ Pelican 当前支持：
 * 从WordPress，Dotclear，或者RSS源导入
 * 集成外部工具，如：Twitter，Google Analytics等 (可选的)
 
-Why the name "Pelican"?
+为什么取名“Pelican”？
 -----------------------
 
-"Pelican" is an anagram for *calepin*, which means "notebook" in French. ;)
+“Pelican”是由 *calepin* 颠倒字母而来的， *calepin* 在法语里是“笔记本”的意思。
 
-Source code
------------
+源代码
+------
 
-You can access the source code at: https://github.com/getpelican/pelican
+您可以在这里访问到源代码： https://github.com/getpelican/pelican
 
-Feedback / Contact us
----------------------
+反馈 / 联系我们
+---------------
 
-If you want to see new features in Pelican, don't hesitate to offer suggestions,
-clone the repository, etc. There are many ways to :doc:`contribute<contribute>`.
-That's open source, dude!
+如果您想看到 Pelican 的新特性，那就别再犹豫，您可以提供建议，克隆代码库等。 :doc:`参与建设<contribute>` 的方式有很多种。它是开源的，伙计！
 
-Send a message to "authors at getpelican dot com" with any requests/feedback! You
-can also join the team at `#pelican on Freenode`_ (or if you don't have an IRC
-client handy, use the webchat_ for quick feedback.
+有任何意见或建议，请发送消息至 authors#getpelican.com ！您也可以加入 `#pelican on Freenode`_ 讨论组，如果您手边没有一个IRC客户端，请使用 webchat_ 进行快速反馈。
 
-Documentation
--------------
+文档
+----
 
-A French version of the documentation is available at Pelican_.
+一个法语版的文档可访问： Pelican_ 。
 
 .. toctree::
    :maxdepth: 2

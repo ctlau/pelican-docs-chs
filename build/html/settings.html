@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Settings &mdash; Pelican 3.2 documentation</title>
+    <title>设置 &mdash; Pelican 3.2 documentation</title>
     
     <link rel="stylesheet" href="_static/pelican.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Pelican 3.2 documentation" href="index.html" />
     <link rel="next" title="How to create themes for Pelican" href="themes.html" />
-    <link rel="prev" title="Getting started" href="getting_started.html" /> 
+    <link rel="prev" title="入门" href="getting_started.html" /> 
   </head>
   <body>
   
@@ -36,8 +36,8 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <div class="section" id="settings">
-<h1>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>设置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Pelican is configurable thanks to a configuration file you can pass to
 the command line:</p>
 <div class="highlight-python"><pre>$ pelican -s path/to/your/settingsfile.py path</pre>
@@ -143,7 +143,7 @@ The dictionary should map the filtername to the filter function.
 For example: <tt class="docutils literal"><span class="pre">{'urlencode':</span> <span class="pre">urlencode_filter}</span></tt>
 See <a class="reference external" href="http://jinja.pocoo.org/docs/api/#custom-filters">Jinja custom filters documentation</a>.</td>
 </tr>
-<tr class="row-odd"><td><cite>LOCALE</cite> (&#8216;&#8217;<a class="footnote-reference" href="#id2" id="id1">[1]</a>)</td>
+<tr class="row-odd"><td><cite>LOCALE</cite> (&#8216;&#8217;<a class="footnote-reference" href="#id3" id="id2">[1]</a>)</td>
 <td>Change the locale. A list of locales can be provided
 here or a single string representing one locale.
 When providing a list, all the locales will be tried
@@ -208,7 +208,7 @@ not. Only set this to <tt class="docutils literal"><span class="pre">True</span>
 if you fully understand the effect it can have on links/feeds.</td>
 </tr>
 <tr class="row-odd"><td><cite>PLUGINS</cite> (<tt class="docutils literal"><span class="pre">[]</span></tt>)</td>
-<td>The list of plugins to load. See <a class="reference internal" href="plugins.html#plugins"><em>Plugins</em></a>.</td>
+<td>The list of plugins to load. See <a class="reference internal" href="plugins.html#plugins"><em>插件</em></a>.</td>
 </tr>
 <tr class="row-even"><td><cite>SITENAME</cite> (<tt class="docutils literal"><span class="pre">'A</span> <span class="pre">Pelican</span> <span class="pre">Blog'</span></tt>)</td>
 <td>Your site name</td>
@@ -267,10 +267,10 @@ These templates need to use <tt class="docutils literal"><span class="pre">DIREC
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+<table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Default is the system locale.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Default is the system locale.</td></tr>
 </tbody>
 </table>
 <div class="section" id="url-settings">
@@ -465,7 +465,7 @@ can get a list of available locales via the <tt class="docutils literal"><span c
 </div>
 </div>
 <div class="section" id="template-pages">
-<span id="id3"></span><h2>Template pages<a class="headerlink" href="#template-pages" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Template pages<a class="headerlink" href="#template-pages" title="Permalink to this headline">¶</a></h2>
 <p>If you want to generate custom pages besides your blog entries, you can point
 any Jinja2 template file with a path pointing to the file and the destination
 path for the generated file.</p>
@@ -519,7 +519,7 @@ language.</td>
 this feed will contain all posts regardless of their
 language.</td>
 </tr>
-<tr class="row-odd"><td><cite>CATEGORY_FEED_ATOM</cite> (&#8216;feeds/%s.atom.xml&#8217;<a class="footnote-reference" href="#id5" id="id4">[2]</a>)</td>
+<tr class="row-odd"><td><cite>CATEGORY_FEED_ATOM</cite> (&#8216;feeds/%s.atom.xml&#8217;<a class="footnote-reference" href="#id6" id="id5">[2]</a>)</td>
 <td>Where to put the category Atom feeds.</td>
 </tr>
 <tr class="row-even"><td><cite>CATEGORY_FEED_RSS</cite> (<tt class="docutils literal"><span class="pre">None</span></tt>, i.e. no RSS)</td>
@@ -539,10 +539,10 @@ quantity is unrestricted by default.</td>
 </tbody>
 </table>
 <p>If you don&#8217;t want to generate some or any of these feeds, set the above variables to <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>%s is the name of the category.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td>%s is the name of the category.</td></tr>
 </tbody>
 </table>
 <div class="section" id="feedburner">
@@ -645,7 +645,7 @@ more information.</p>
 <tr class="row-even"><td><cite>DEFAULT_LANG</cite> (<tt class="docutils literal"><span class="pre">'en'</span></tt>)</td>
 <td>The default language to use.</td>
 </tr>
-<tr class="row-odd"><td><cite>TRANSLATION_FEED_ATOM</cite> (&#8216;feeds/all-%s.atom.xml&#8217;<a class="footnote-reference" href="#id8" id="id7">[3]</a>)</td>
+<tr class="row-odd"><td><cite>TRANSLATION_FEED_ATOM</cite> (&#8216;feeds/all-%s.atom.xml&#8217;<a class="footnote-reference" href="#id9" id="id8">[3]</a>)</td>
 <td>Where to put the Atom feed for translations.</td>
 </tr>
 <tr class="row-even"><td><cite>TRANSLATION_FEED_RSS</cite> (<tt class="docutils literal"><span class="pre">None</span></tt>, i.e. no RSS)</td>
@@ -653,10 +653,10 @@ more information.</p>
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td>%s is the language</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[3]</a></td><td>%s is the language</td></tr>
 </tbody>
 </table>
 </div>

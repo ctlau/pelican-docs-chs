@@ -1,5 +1,5 @@
-Tips
-####
+小贴士
+######
 
 Here are some tips about Pelican that you might find useful.
 

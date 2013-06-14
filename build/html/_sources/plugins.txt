@@ -1,7 +1,7 @@
 .. _plugins:
 
-Plugins
-#######
+插件
+####
 
 Beginning with version 3.0, Pelican supports plugins. Plugins are a way to add
 features to Pelican without having to directly modify the Pelican core.
