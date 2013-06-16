@@ -1,5 +1,5 @@
-常见问题
-########
+Frequently Asked Questions (FAQ)
+################################
 
 Here are some frequently asked questions about Pelican.
 

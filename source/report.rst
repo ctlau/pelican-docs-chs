@@ -1,5 +1,5 @@
-关于 Pelican 的一些历史
-#######################
+Some history about Pelican
+##########################
 
 .. warning::
 

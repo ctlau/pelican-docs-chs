@@ -1,5 +1,5 @@
-入门
-####
+Getting started
+###############
 
 Installing Pelican
 ==================

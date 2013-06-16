@@ -1,5 +1,5 @@
-参与建设
-########
+How to contribute
+#################
 
 There are many ways to contribute to Pelican. You can improve the
 documentation, add missing features, and fix bugs (or just report them). You
