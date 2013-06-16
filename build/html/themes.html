@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>How to create themes for Pelican &mdash; Pelican 3.2 documentation</title>
+    <title>怎样给Pelican创建主题 &mdash; Pelican 3.2 documentation</title>
     
     <link rel="stylesheet" href="_static/pelican.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Pelican 3.2 documentation" href="index.html" />
-    <link rel="next" title="Plugins" href="plugins.html" />
-    <link rel="prev" title="Settings" href="settings.html" /> 
+    <link rel="next" title="插件" href="plugins.html" />
+    <link rel="prev" title="设置" href="settings.html" /> 
   </head>
   <body>
   
@@ -36,13 +36,13 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <div class="section" id="how-to-create-themes-for-pelican">
-<span id="theming-pelican"></span><h1>How to create themes for Pelican<a class="headerlink" href="#how-to-create-themes-for-pelican" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pelican">
+<span id="theming-pelican"></span><h1>怎样给Pelican创建主题<a class="headerlink" href="#pelican" title="Permalink to this headline">¶</a></h1>
 <p>Pelican uses the great <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> templating engine to
 generate its HTML output. Jinja2 syntax is really simple. If you want to
 create your own theme, feel free to take inspiration from the <a class="reference external" href="https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates">&#8220;simple&#8221; theme</a>.</p>
-<div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>结构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>To make your own theme, you must follow the following structure:</p>
 <div class="highlight-python"><pre>├── static
 │   ├── css
@@ -69,15 +69,15 @@ I&#8217;ve just put the mandatory templates here; you can define your own if it 
 you keep things organized while creating your theme.</li>
 </ul>
 </div>
-<div class="section" id="templates-and-variables">
-<h2>Templates and variables<a class="headerlink" href="#templates-and-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>模板和变量<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>The idea is to use a simple syntax that you can embed into your HTML pages.
 This document describes which templates should exist in a theme, and which
 variables will be passed to each template at generation time.</p>
 <p>All templates will receive the variables defined in your settings file, if they
 are in all-caps. You can access them directly.</p>
-<div class="section" id="common-variables">
-<h3>Common variables<a class="headerlink" href="#common-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>公共变量<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>All of these settings will be available to all templates.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -122,8 +122,8 @@ and the list of respective articles (values)</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="sorting">
-<h3>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>排序<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>URL wrappers (currently categories, tags, and authors), have
 comparison methods that allow them to be easily sorted by name:</p>
 <div class="highlight-python"><pre>{% for tag, articles in tags|sort %}</pre>
@@ -131,8 +131,8 @@ comparison methods that allow them to be easily sorted by name:</p>
 <p>If you want to sort based on different criteria, <a class="reference external" href="http://jinja.pocoo.org/docs/templates/#sort">Jinja&#8217;s sort
 command</a> has a number of options.</p>
 </div>
-<div class="section" id="date-formatting">
-<h3>Date Formatting<a class="headerlink" href="#date-formatting" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>日期格式化<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>Pelican formats the date with according to your settings and locale
 (<tt class="docutils literal"><span class="pre">DATE_FORMATS</span></tt>/<tt class="docutils literal"><span class="pre">DEFAULT_DATE_FORMAT</span></tt>) and provides a
 <tt class="docutils literal"><span class="pre">locale_date</span></tt> attribute. On the other hand, <tt class="docutils literal"><span class="pre">date</span></tt> attribute will
@@ -145,8 +145,8 @@ to the locale given in your settings:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="index-html">
-<h3>index.html<a class="headerlink" href="#index-html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>首页<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>This is the home page of your blog, generated at output/index.html.</p>
 <p>If pagination is active, subsequent pages will reside in output/index`n`.html.</p>
 <table border="1" class="docutils">
@@ -180,8 +180,8 @@ ascending.</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="author-html">
-<h3>author.html<a class="headerlink" href="#author-html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>作者页<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>This template will be processed for each of the existing authors, with
 output generated at output/author/<cite>author_name</cite>.html.</p>
 <p>If pagination is active, subsequent pages will reside as defined by setting
@@ -228,8 +228,8 @@ removed &#8211; useful for pagination links</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="category-html">
-<h3>category.html<a class="headerlink" href="#category-html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>分类页<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>This template will be processed for each of the existing categories, with
 output generated at output/category/<cite>category_name</cite>.html.</p>
 <p>If pagination is active, subsequent pages will reside as defined by setting
@@ -276,8 +276,8 @@ removed &#8211; useful for pagination links</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="article-html">
-<h3>article.html<a class="headerlink" href="#article-html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>文章页<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>This template will be processed for each article, with .html files saved
 as output/<cite>article_name</cite>.html. Here are the specific variables it gets.</p>
 <table border="1" class="docutils">
@@ -300,8 +300,8 @@ as output/<cite>article_name</cite>.html. Here are the specific variables it get
 </tbody>
 </table>
 </div>
-<div class="section" id="page-html">
-<h3>page.html<a class="headerlink" href="#page-html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>静态页<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>This template will be processed for each page, with corresponding .html files
 saved as output/<cite>page_name</cite>.html.</p>
 <table border="1" class="docutils">
@@ -322,8 +322,8 @@ title, slug, and content.</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="tag-html">
-<h3>tag.html<a class="headerlink" href="#tag-html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>标签页<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>This template will be processed for each tag, with corresponding .html files
 saved as output/tag/<cite>tag_name</cite>.html.</p>
 <p>If pagination is active, subsequent pages will reside as defined in setting
@@ -371,8 +371,8 @@ ascending</td>
 </table>
 </div>
 </div>
-<div class="section" id="feeds">
-<h2>Feeds<a class="headerlink" href="#feeds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2>供稿<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>The feed variables changed in 3.0. Each variable now explicitly lists ATOM or
 RSS in the name. ATOM is still the default. Old themes will need to be updated.
 Here is a complete list of the feed variables:</p>
@@ -389,8 +389,8 @@ Here is a complete list of the feed variables:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="inheritance">
-<h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2>继承<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>Since version 3.0, Pelican supports inheritance from the <tt class="docutils literal"><span class="pre">simple</span></tt> theme, so
 you can re-use the <tt class="docutils literal"><span class="pre">simple</span></tt> theme templates in your own themes.</p>
 <p>If one of the mandatory files in the <tt class="docutils literal"><span class="pre">templates/</span></tt> directory of your theme is
@@ -403,8 +403,8 @@ you don&#8217;t have to write a new template from scratch.</p>
 <span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;index.html&quot;</span> <span class="cp">%}</span>   <span class="c">&lt;!-- &quot;regular&quot; extending --&gt;</span>
 </pre></div>
 </div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>样例<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>With this system, it is possible to create a theme with just two files.</p>
 <div class="section" id="base-html">
 <h4>base.html<a class="headerlink" href="#base-html" title="Permalink to this headline">¶</a></h4>

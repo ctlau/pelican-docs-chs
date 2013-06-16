@@ -1,13 +1,13 @@
 .. _plugins:
 
-Plugins
-#######
+插件
+####
 
 Beginning with version 3.0, Pelican supports plugins. Plugins are a way to add
 features to Pelican without having to directly modify the Pelican core.
 
-How to use plugins
-==================
+怎样使用插件
+============
 
 To load plugins, you have to specify them in your settings file. There are two
 ways to do so. The first method is to specify strings with the path to the
@@ -27,8 +27,8 @@ the settings file::
     PLUGIN_PATH = "plugins"
     PLUGINS = ["list", "of", "plugins"]
 
-Where to find plugins
-=====================
+何处获得插件
+============
 
 We maintain a separate repository of plugins for people to share and use.
 Please visit the `pelican-plugins`_ repository for a list of available plugins.
@@ -39,8 +39,8 @@ Please note that while we do our best to review and maintain these plugins,
 they are submitted by the Pelican community and thus may have varying levels of
 support and interoperability.
 
-How to create plugins
-=====================
+怎样创建插件
+============
 
 Plugins are based on the concept of signals. Pelican sends signals, and plugins
 subscribe to those signals. The list of signals are defined in a subsequent
@@ -57,8 +57,8 @@ which you map the signals to your plugin logic. Let's take a simple example::
     def register():
         signals.initialized.connect(test)
 
-List of signals
-===============
+信号列表
+========
 
 Here is the list of currently implemented signals:
 
@@ -79,9 +79,9 @@ article_generator_finalized     article_generator               invoked at the e
 get_generators                  generators                      invoked in Pelican.get_generator_classes,
                                                                 can return a Generator, or several
                                                                 generator in a tuple or in a list.
-pages_generate_context          pages_generator, metadata
-pages_generator_init            pages_generator                 invoked in the PagesGenerator.__init__
-pages_generator_finalized       pages_generator                 invoked at the end of PagesGenerator.generate_context
+page_generate_context           page_generator, metadata
+page_generator_init             page_generator                  invoked in the PagesGenerator.__init__
+page_generator_finalized        page_generator                  invoked at the end of PagesGenerator.generate_context
 content_object_init             content_object                  invoked at the end of Content.__init__ (see note below)
 =============================   ============================   ===========================================================================
 
@@ -104,3 +104,22 @@ request if you need them!
 
        def register():
                signals.content_object_init.connect(test, sender=contents.Article)
+
+.. note::
+
+   After Pelican 3.2, signal names were standardized.  Older plugins
+   may need to be updated to use the new names:
+
+   ==========================  ===========================
+   Old name                    New name
+   ==========================  ===========================
+   article_generate_context    article_generator_context
+   article_generate_finalized  article_generator_finalized
+   article_generate_preread    article_generator_preread
+   pages_generate_context      page_generator_context
+   pages_generate_preread      page_generator_preread
+   pages_generator_finalized   page_generator_finalized
+   pages_generator_init        page_generator_init
+   static_generate_context     static_generator_context
+   static_generate_preread     static_generator_preread
+   ==========================  ===========================

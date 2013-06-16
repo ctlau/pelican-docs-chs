@@ -1,5 +1,5 @@
-How to contribute
-#################
+如何贡献
+########
 
 There are many ways to contribute to Pelican. You can improve the
 documentation, add missing features, and fix bugs (or just report them). You
@@ -11,8 +11,8 @@ so, please adhere to the following guidelines.
 
 .. include:: ../CONTRIBUTING.rst
 
-Setting up the development environment
-======================================
+设置开发环境
+============
 
 While there are many ways to set up one's development environment, following
 is a method that uses `virtualenv <http://www.virtualenv.org/>`_. If you don't
@@ -47,8 +47,8 @@ Or using ``pip``::
 
     $ pip install -e .
 
-Coding standards
-================
+代码规范
+========
 
 Try to respect what is described in the `PEP8 specification
 <http://www.python.org/dev/peps/pep-0008/>`_ when making contributions. This
@@ -57,8 +57,8 @@ can be eased via the `pep8 <http://pypi.python.org/pypi/pep8>`_ or `flake8
 particular will give you some useful hints about ways in which the
 code/formatting can be improved.
 
-Building the docs
-=================
+构建文档
+========
 
 If you make changes to the documentation, you should preview your changes
 before committing them::
@@ -69,8 +69,8 @@ before committing them::
 
 Open ``_build/html/index.html`` in your browser to preview the documentation.
 
-Running the test suite
-======================
+运行测试套件
+============
 
 Each time you add a feature, there are two things to do regarding tests:
 check that the existing tests pass, and add tests for the new feature
@@ -103,8 +103,8 @@ Python 3-compatible version of dependent packages.
 
 .. _Tox: http://testrun.org/tox/latest/
 
-Python 3 development tips
-=========================
+Python 3 开发贴士
+=================
 
 Here are some tips that may be useful when doing some code for both Python 2.7
 and Python 3 at the same time:

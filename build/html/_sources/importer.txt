@@ -1,12 +1,12 @@
 .. _import:
 
-=================================
- Import from other blog software
-=================================
+====================
+ 从其他博客软件导入
+====================
 
 
-Description
-===========
+描述
+====
 
 ``pelican-import`` is a command-line tool for converting articles from other
 software to reStructuredText or Markdown. The supported import formats are:
@@ -21,8 +21,8 @@ For Dotclear, if the source posts are written with Markdown syntax, they will
 not be converted (as Pelican also supports Markdown).
 
 
-Dependencies
-============
+依赖
+====
 
 ``pelican-import`` has some dependencies not required by the rest of Pelican:
 
@@ -36,8 +36,8 @@ Dependencies
 .. _Pandoc site: http://johnmacfarlane.net/pandoc/installing.html
 
 
-Usage
-=====
+用法
+====
 
 ::
 
@@ -46,14 +46,14 @@ Usage
                    [-e EMAIL] [-p PASSWORD]
                    input|api_token
 
-Positional arguments
---------------------
+位置参数
+--------
 
   input                 The input file to read
   api_token             [Posterous only] api_token can be obtained from http://posterous.com/api/
 
-Optional arguments
-------------------
+可选参数
+--------
 
   -h, --help            Show this help message and exit
   --wpfile              WordPress XML export (default: False)
@@ -82,8 +82,8 @@ Optional arguments
                         Password used to authenticate Posterous API
 
 
-Examples
-========
+样例
+====
 
 For WordPress::
 
@@ -98,8 +98,8 @@ for Posterous::
     $ pelican-import --posterous -o ~/output --email=<email_address> --password=<password> <api_token>
 
 
-Tests
-=====
+测试
+====
 
 To test the module, one can use sample files:
 

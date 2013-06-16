@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release history &mdash; Pelican 3.2 documentation</title>
+    <title>发布记录 &mdash; Pelican 3.2 documentation</title>
     
     <link rel="stylesheet" href="_static/pelican.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Pelican 3.2 documentation" href="index.html" />
-    <link rel="prev" title="Some history about Pelican" href="report.html" /> 
+    <link rel="prev" title="关于Pelican的一些历史" href="report.html" /> 
   </head>
   <body>
   
@@ -35,13 +35,26 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <div class="section" id="release-history">
-<h1>Release history<a class="headerlink" href="#release-history" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>发布记录<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="xxxx-xx-xx">
 <h2>3.3 (XXXX-XX-XX)<a class="headerlink" href="#xxxx-xx-xx" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Rename signals for better consistency (some plugins may need to be updated)</li>
+<li>Move metadata extraction from generators to readers; metadata extraction no
+longer article-specific</li>
+<li>Deprecate <tt class="docutils literal"><span class="pre">FILES_TO_COPY</span></tt> in favor of <tt class="docutils literal"><span class="pre">STATIC_PATHS</span></tt> and
+<tt class="docutils literal"><span class="pre">EXTRA_PATH_METADATA</span></tt></li>
+</ul>
 </div>
-<div class="section" id="id1">
-<h2>3.2 (2013-04-24)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="and-3-2-2">
+<h2>3.2.1 and 3.2.2<a class="headerlink" href="#and-3-2-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Facilitate inclusion in FreeBSD Ports Collection</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>3.2 (2013-04-24)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Support for Python 3!</li>
 <li>Override page save-to location from meta-data (enables using a static page as
@@ -61,8 +74,8 @@ and which is the translation</li>
 <li>Document-relative URL generation (<tt class="docutils literal"><span class="pre">RELATIVE_URLS</span></tt>) is now off by default</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>3.1 (2012-12-04)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>3.1 (2012-12-04)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Importer now stores slugs within files by default. This can be disabled with
 the <tt class="docutils literal"><span class="pre">--disable-slugs</span></tt> option.</li>
@@ -94,8 +107,8 @@ file within the same directory as the original file, preventing the server
 <tt class="docutils literal"><span class="pre">article_generate_preread</span></tt></li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>3.0 (2012-08-08)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>3.0 (2012-08-08)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Refactored the way URLs are handled</li>
 <li>Improved the English documentation</li>
@@ -113,8 +126,8 @@ file within the same directory as the original file, preventing the server
 <li>Fixed a bunch of bugs :-)</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>2.8 (2012-02-28)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>2.8 (2012-02-28)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Dotclear importer</li>
 <li>Allow the usage of Markdown extensions</li>
@@ -134,8 +147,8 @@ file within the same directory as the original file, preventing the server
 <li>Enhanced the documentation</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2>2.7 (2011-06-11)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>2.7 (2011-06-11)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Use <tt class="docutils literal"><span class="pre">logging</span></tt> rather than echoing to stdout</li>
 <li>Support custom Jinja filters</li>
@@ -145,8 +158,8 @@ file within the same directory as the original file, preventing the server
 <li>Added draft support</li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h2>2.6 (2011-03-08)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>2.6 (2011-03-08)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Changes in the output directory structure</li>
 <li>Makes templates easier to work with / create</li>
@@ -164,8 +177,8 @@ file within the same directory as the original file, preventing the server
 <li>Added Skribit support</li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2>2.5 (2010-11-20)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>2.5 (2010-11-20)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Import from Wordpress</li>
 <li>Added some new themes (martyalchin / wide-notmyidea)</li>
@@ -177,8 +190,8 @@ file within the same directory as the original file, preventing the server
 <li>Use relative URLs, not static ones</li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h2>2.4 (2010-11-06)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>2.4 (2010-11-06)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Minor themes changes</li>
 <li>Add Disqus support (so we have comments)</li>
@@ -187,34 +200,34 @@ file within the same directory as the original file, preventing the server
 <li>Blog entries can also be generated in PDF</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h2>2.3 (2010-10-31)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>2.3 (2010-10-31)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Markdown support</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h2>2.2 (2010-10-30)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2>2.2 (2010-10-30)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Prettify output</li>
 <li>Manages static pages as well</li>
 </ul>
 </div>
-<div class="section" id="id11">
-<h2>2.1 (2010-10-30)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2>2.1 (2010-10-30)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Make notmyidea the default theme</li>
 </ul>
 </div>
-<div class="section" id="id12">
-<h2>2.0 (2010-10-30)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2>2.0 (2010-10-30)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Refactoring to be more extensible</li>
 <li>Change into the setting variables</li>
 </ul>
 </div>
-<div class="section" id="id13">
-<h2>1.2 (2010-09-28)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2>1.2 (2010-09-28)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added a debug option</li>
 <li>Added per-category feeds</li>
@@ -222,8 +235,8 @@ file within the same directory as the original file, preventing the server
 <li>Add Pygments support</li>
 </ul>
 </div>
-<div class="section" id="id14">
-<h2>1.1 (2010-08-19)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2>1.1 (2010-08-19)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>First working version</li>
 </ul>

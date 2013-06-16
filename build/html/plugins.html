@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Plugins &mdash; Pelican 3.2 documentation</title>
+    <title>插件 &mdash; Pelican 3.2 documentation</title>
     
     <link rel="stylesheet" href="_static/pelican.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Pelican 3.2 documentation" href="index.html" />
-    <link rel="next" title="Pelican internals" href="internals.html" />
-    <link rel="prev" title="How to create themes for Pelican" href="themes.html" /> 
+    <link rel="next" title="Pelican内部构件" href="internals.html" />
+    <link rel="prev" title="怎样给Pelican创建主题" href="themes.html" /> 
   </head>
   <body>
   
@@ -37,11 +37,11 @@
           <div class="body">
             
   <div class="section" id="plugins">
-<span id="id1"></span><h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>插件<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>Beginning with version 3.0, Pelican supports plugins. Plugins are a way to add
 features to Pelican without having to directly modify the Pelican core.</p>
-<div class="section" id="how-to-use-plugins">
-<h2>How to use plugins<a class="headerlink" href="#how-to-use-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>怎样使用插件<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>To load plugins, you have to specify them in your settings file. There are two
 ways to do so. The first method is to specify strings with the path to the
 callables:</p>
@@ -61,16 +61,16 @@ the settings file:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="where-to-find-plugins">
-<h2>Where to find plugins<a class="headerlink" href="#where-to-find-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>何处获得插件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>We maintain a separate repository of plugins for people to share and use.
 Please visit the <a class="reference external" href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a> repository for a list of available plugins.</p>
 <p>Please note that while we do our best to review and maintain these plugins,
 they are submitted by the Pelican community and thus may have varying levels of
 support and interoperability.</p>
 </div>
-<div class="section" id="how-to-create-plugins">
-<h2>How to create plugins<a class="headerlink" href="#how-to-create-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>怎样创建插件<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Plugins are based on the concept of signals. Pelican sends signals, and plugins
 subscribe to those signals. The list of signals are defined in a subsequent
 section.</p>
@@ -85,8 +85,8 @@ def register():
     signals.initialized.connect(test)</pre>
 </div>
 </div>
-<div class="section" id="list-of-signals">
-<h2>List of signals<a class="headerlink" href="#list-of-signals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>信号列表<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Here is the list of currently implemented signals:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -139,16 +139,16 @@ use if code needs to do something before every article is parsed</td>
 can return a Generator, or several
 generator in a tuple or in a list.</td>
 </tr>
-<tr class="row-even"><td>pages_generate_context</td>
-<td>pages_generator, metadata</td>
+<tr class="row-even"><td>page_generate_context</td>
+<td>page_generator, metadata</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>pages_generator_init</td>
-<td>pages_generator</td>
+<tr class="row-odd"><td>page_generator_init</td>
+<td>page_generator</td>
 <td>invoked in the PagesGenerator.__init__</td>
 </tr>
-<tr class="row-even"><td>pages_generator_finalized</td>
-<td>pages_generator</td>
+<tr class="row-even"><td>page_generator_finalized</td>
+<td>page_generator</td>
 <td>invoked at the end of PagesGenerator.generate_context</td>
 </tr>
 <tr class="row-odd"><td>content_object_init</td>
@@ -173,6 +173,51 @@ def test(sender, instance):
 def register():
         signals.content_object_init.connect(test, sender=contents.Article)</pre>
 </div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>After Pelican 3.2, signal names were standardized.  Older plugins
+may need to be updated to use the new names:</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Old name</th>
+<th class="head">New name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>article_generate_context</td>
+<td>article_generator_context</td>
+</tr>
+<tr class="row-odd"><td>article_generate_finalized</td>
+<td>article_generator_finalized</td>
+</tr>
+<tr class="row-even"><td>article_generate_preread</td>
+<td>article_generator_preread</td>
+</tr>
+<tr class="row-odd"><td>pages_generate_context</td>
+<td>page_generator_context</td>
+</tr>
+<tr class="row-even"><td>pages_generate_preread</td>
+<td>page_generator_preread</td>
+</tr>
+<tr class="row-odd"><td>pages_generator_finalized</td>
+<td>page_generator_finalized</td>
+</tr>
+<tr class="row-even"><td>pages_generator_init</td>
+<td>page_generator_init</td>
+</tr>
+<tr class="row-odd"><td>static_generate_context</td>
+<td>static_generator_context</td>
+</tr>
+<tr class="row-even"><td>static_generate_preread</td>
+<td>static_generator_preread</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

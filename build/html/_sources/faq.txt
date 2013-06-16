@@ -1,10 +1,10 @@
-Frequently Asked Questions (FAQ)
-################################
+常见问题
+########
 
 Here are some frequently asked questions about Pelican.
 
-What's the best way to communicate a problem, question, or suggestion?
-======================================================================
+交流一个难题、疑问或者建议的最佳途径是什么？
+============================================
 
 If you have a problem, question, or suggestion, please start by striking up a
 conversation on `#pelican on Freenode <irc://irc.freenode.net/pelican>`_.
@@ -17,8 +17,8 @@ always respond if you wait long enough (it may take a few hours).
 If you're unable to resolve your issue or if you have a feature request, please
 refer to the `issue tracker <https://github.com/getpelican/pelican/issues>`_.
 
-How can I help?
-================
+我能做些什么？
+==============
 
 There are several ways to help out. First, you can report any Pelican
 suggestions or problems you might have via IRC or the `issue tracker
@@ -34,15 +34,15 @@ section for more details.
 
 You can also contribute by creating themes and improving the documentation.
 
-Is it mandatory to have a configuration file?
-=============================================
+是否强制需要一个配置文件？
+==========================
 
 Configuration files are optional and are just an easy way to configure Pelican.
 For basic operations, it's possible to specify options while invoking Pelican
 via the command line. See ``pelican --help`` for more information.
 
-I'm creating my own theme. How do I use Pygments for syntax highlighting?
-=========================================================================
+我在创建我自己的主题，我怎样使用Pygments来实现语法高亮？
+========================================================
 
 Pygments adds some classes to the generated content. These classes are used by
 themes to style code syntax highlighting via CSS. Specifically, you can
@@ -60,13 +60,13 @@ CSS file to your new theme::
 
 Don't forget to import your ``pygment.css`` file from your main CSS file.
 
-How do I create my own theme?
-==============================
+我怎样创建自己的主题？
+======================
 
 Please refer to :ref:`theming-pelican`.
 
-I want to use Markdown, but I got an error.
-===========================================
+我想使用Markdown，但我收到一个错误
+==================================
 
 Markdown is not a hard dependency for Pelican, so you will need to explicitly
 install it. You can do so by typing the following command, prepending ``sudo``
@@ -78,8 +78,8 @@ If you don't have ``pip`` installed, consider installing it via::
 
     easy_install pip
 
-Can I use arbitrary metadata in my templates?
-==============================================
+我能否在我的模板里使用任意的元数据？
+====================================
 
 Yes. For example, to include a modified date in a Markdown post, one could
 include the following at the top of the article::
@@ -96,8 +96,8 @@ This metadata can then be accessed in the template::
     Last modified: {{ article.modified }}
     {% endif %}
 
-How do I assign custom templates on a per-page basis?
-=====================================================
+我怎样给每一页分配一个定制的模板？
+==================================
 
 It's as simple as adding an extra line of metadata to any page or article that
 you want to have its own template. For example, this is how it would be handled
@@ -112,8 +112,8 @@ For content in Markdown format::
 Then just make sure your theme contains the relevant template file (e.g.
 ``template_name.html``).
 
-How can I override the generated URL of a specific page or article?
-===================================================================
+我怎样覆盖一个特定的页面或文章生成的URL？
+=========================================
 
 Include ``url`` and ``save_as`` metadata in any pages or articles that you want
 to override the generated URL. Here is an example page in reST format::
@@ -127,8 +127,8 @@ to override the generated URL. Here is an example page in reST format::
 With this metadata, the page will be written to ``override/url/index.html``
 and Pelican will use url ``override/url/`` to link to this page.
 
-How can I use a static page as my home page?
-============================================
+我怎样使用一个静态页面作为我的主页？
+====================================
 
 The override feature mentioned above can be used to specify a static page as
 your home page. The following Markdown example could be stored in
@@ -140,8 +140,8 @@ your home page. The following Markdown example could be stored in
 
     Thank you for visiting. Welcome!
 
-What if I want to disable feed generation?
-==========================================
+如果我让feed生成失效将会怎样？
+==============================
 
 To disable feed generation, all feed settings should be set to ``None``.
 All but three feed settings already default to ``None``, so if you want to
@@ -154,8 +154,8 @@ disable all feed generation, you only need to specify the following settings::
 Please note that ``None`` and ``''`` are not the same thing. The word ``None``
 should not be surrounded by quotes.
 
-I'm getting a warning about feeds generated without SITEURL being set properly
-==============================================================================
+我收到一个警告：生成feeds时SITEURL未正确设置
+============================================
 
 `RSS and Atom feeds require all URL links to be absolute
 <http://validator.w3.org/feed/docs/rss2.html#comments>`_.
@@ -165,8 +165,8 @@ to the full path of your site.
 Feeds are still generated when this warning is displayed, but links within may
 be malformed and thus the feed may not validate.
 
-My feeds are broken since I upgraded to Pelican 3.x
-===================================================
+自从我升级到Pelican 3.x，供稿就被破坏了
+=======================================
 
 Starting in 3.0, some of the FEED setting names were changed to more explicitly
 refer to the Atom feeds they inherently represent (much like the FEED_RSS

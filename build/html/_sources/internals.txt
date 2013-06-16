@@ -1,5 +1,5 @@
-Pelican internals
-#################
+Pelican内部构件
+###############
 
 This section describe how Pelican works internally. As you'll see, it's
 quite simple, but a bit of documentation doesn't hurt.  :)
@@ -9,8 +9,8 @@ original author wrote with some software design information.
 
 .. _report: :doc:`report`
 
-Overall structure
-=================
+总体结构
+========
 
 What Pelican does is take a list of files and process them into some sort of
 output. Usually, the input files are reStructuredText, Markdown and AsciiDoc
@@ -35,8 +35,8 @@ The logic is separated into different classes and concepts:
   syntax is `Jinja2 <http://jinja.pocoo.org/>`_ and is very easy to learn, so
   don't hesitate to jump in and build your own theme.
 
-How to implement a new reader?
-==============================
+怎样实现一个新的阅读器？
+========================
 
 Is there an awesome markup language you want to add to Pelican?
 Well, the only thing you have to do is to create a class with a ``read``
@@ -68,8 +68,8 @@ class, set the ``enabled`` class attribute to mark import success or failure.
 This makes it possible for users to continue using their favourite markup method
 without needing to install modules for formats they don't use.
 
-How to implement a new generator?
-=================================
+怎样实现一个新的生成器？
+========================
 
 Generators have two important methods. You're not forced to create
 both; only the existing ones will be called.

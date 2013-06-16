@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Pelican internals &mdash; Pelican 3.2 documentation</title>
+    <title>Pelican内部构件 &mdash; Pelican 3.2 documentation</title>
     
     <link rel="stylesheet" href="_static/pelican.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Pelican 3.2 documentation" href="index.html" />
-    <link rel="next" title="pelican-themes" href="pelican-themes.html" />
-    <link rel="prev" title="Plugins" href="plugins.html" /> 
+    <link rel="next" title="pelican-themes命令" href="pelican-themes.html" />
+    <link rel="prev" title="插件" href="plugins.html" /> 
   </head>
   <body>
   
@@ -36,14 +36,14 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <div class="section" id="pelican-internals">
-<h1>Pelican internals<a class="headerlink" href="#pelican-internals" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pelican">
+<h1>Pelican内部构件<a class="headerlink" href="#pelican" title="Permalink to this headline">¶</a></h1>
 <p>This section describe how Pelican works internally. As you&#8217;ll see, it&#8217;s
 quite simple, but a bit of documentation doesn&#8217;t hurt.  :)</p>
-<p>You can also find in the <a class="reference internal" href="report.html"><em>Some history about Pelican</em></a> section an excerpt of a report the
+<p>You can also find in the <a class="reference internal" href="report.html"><em>关于Pelican的一些历史</em></a> section an excerpt of a report the
 original author wrote with some software design information.</p>
-<div class="section" id="overall-structure">
-<h2>Overall structure<a class="headerlink" href="#overall-structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>总体结构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>What Pelican does is take a list of files and process them into some sort of
 output. Usually, the input files are reStructuredText, Markdown and AsciiDoc
 files, and the output is a blog, but both input and output can be anything you
@@ -64,8 +64,8 @@ syntax is <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a
 don&#8217;t hesitate to jump in and build your own theme.</li>
 </ul>
 </div>
-<div class="section" id="how-to-implement-a-new-reader">
-<h2>How to implement a new reader?<a class="headerlink" href="#how-to-implement-a-new-reader" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>怎样实现一个新的阅读器？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Is there an awesome markup language you want to add to Pelican?
 Well, the only thing you have to do is to create a class with a <tt class="docutils literal"><span class="pre">read</span></tt>
 method that returns HTML content and some metadata.</p>
@@ -94,8 +94,8 @@ class, set the <tt class="docutils literal"><span class="pre">enabled</span></tt
 This makes it possible for users to continue using their favourite markup method
 without needing to install modules for formats they don&#8217;t use.</p>
 </div>
-<div class="section" id="how-to-implement-a-new-generator">
-<h2>How to implement a new generator?<a class="headerlink" href="#how-to-implement-a-new-generator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>怎样实现一个新的生成器？<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Generators have two important methods. You&#8217;re not forced to create
 both; only the existing ones will be called.</p>
 <ul class="simple">

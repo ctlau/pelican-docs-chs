@@ -1,5 +1,5 @@
-Settings
-########
+设置
+####
 
 Pelican is configurable thanks to a configuration file you can pass to
 the command line::
@@ -24,8 +24,8 @@ templates, which allows you to use your settings to add site-wide content.
 
 Here is a list of settings for Pelican:
 
-Basic settings
-==============
+基本设置
+========
 
 =====================================================================   =====================================================================
 Setting name (default value)                                            What does it do?
@@ -62,15 +62,16 @@ Setting name (default value)                                            What doe
                                                                         For example, if you would like to extract both the
                                                                         date and the slug, you could set something like:
                                                                         ``'(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'``.
+                                                                        See :ref:`path_metadata`.
 `PATH_METADATA` (``''``)                                                Like ``FILENAME_METADATA``, but parsed from a page's
                                                                         full path relative to the content source directory.
+                                                                        See :ref:`path_metadata`.
+`EXTRA_PATH_METADATA` (``{}``)                                          Extra metadata dictionaries keyed by relative path.
+                                                                        See :ref:`path_metadata`.
 `DELETE_OUTPUT_DIRECTORY` (``False``)                                   Delete the output directory, and **all** of its contents, before
                                                                         generating new files. This can be useful in preventing older,
                                                                         unnecessary files from persisting in your output. However, **this is
                                                                         a destructive setting and should be handled with extreme care.**
-`FILES_TO_COPY` (``()``)                                                A list of files (or directories) to copy from the source (inside the
-                                                                        content directory) to the destination (inside the output directory).
-                                                                        For example: ``(('extra/robots.txt', 'robots.txt'),)``.
 `JINJA_EXTENSIONS` (``[]``)                                             A list of any Jinja2 extensions you want to use.
 `JINJA_FILTERS` (``{}``)                                                A list of custom Jinja2 filters you want to use.
                                                                         The dictionary should map the filtername to the filter function.
@@ -153,8 +154,8 @@ Setting name (default value)                                            What doe
 .. [#] Default is the system locale.
 
 
-URL settings
-------------
+URL设置
+-------
 
 The first thing to understand is that there are currently two supported methods
 for URL formation: *relative* and *absolute*. Document-relative URLs are useful
@@ -255,8 +256,8 @@ Setting name (default value)                            What does it do?
 
     When any of the `*_SAVE_AS` settings is set to False, files will not be created.
 
-Timezone
---------
+时区
+----
 
 If no timezone is defined, UTC is assumed. This means that the generated Atom
 and RSS feeds will contain incorrect date information if your locale is not UTC.
@@ -269,8 +270,8 @@ Have a look at `the wikipedia page`_ to get a list of valid timezone values.
 .. _the wikipedia page: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
-Date format and locale
-----------------------
+日期格式和区域设置
+------------------
 
 If no DATE_FORMATS are set, Pelican will fall back to DEFAULT_DATE_FORMAT. If
 you need to maintain multiple languages with different date formats, you can
@@ -323,8 +324,8 @@ can get a list of available locales via the ``locale -a`` command; see manpage
 
 .. _template_pages:
 
-Template pages
-==============
+模板页面
+========
 
 If you want to generate custom pages besides your blog entries, you can point
 any Jinja2 template file with a path pointing to the file and the destination
@@ -337,8 +338,54 @@ your resume, and a contact page — you could have::
                       'src/resume.html': 'dest/resume.html',
                       'src/contact.html': 'dest/contact.html'}
 
-Feed settings
-=============
+
+.. _path_metadata:
+
+Path元数据
+==========
+
+Not all metadata needs to be `embedded in source file itself`__.  For
+example, blog posts are often named following a ``YYYY-MM-DD-SLUG.rst``
+pattern, or nested into ``YYYY/MM/DD-SLUG`` directories.  To extract
+metadata from the filename or path, set ``FILENAME_METADATA`` or
+``PATH_METADATA`` to regular expressions that use Python's `group name
+notation`_ ``(?P<name>…)``.  If you want to attach additional metadata
+but don't want to encode it in the path, you can set
+``EXTRA_PATH_METADATA``:
+
+.. parsed-literal::
+
+    EXTRA_PATH_METADATA = {
+        'relative/path/to/file-1': {
+            'key-1a': 'value-1a',
+            'key-1b': 'value-1b',
+            },
+        'relative/path/to/file-2': {
+            'key-2': 'value-2',
+            },
+        }
+
+This can be a convenient way to shift the installed location of a
+particular file:
+
+.. parsed-literal::
+
+    # Take advantage of the following defaults
+    # STATIC_SAVE_AS = '{path}'
+    # STATIC_URL = '{path}'
+    STATIC_PATHS = [
+        'extra/robots.txt',
+        ]
+    EXTRA_PATH_METADATA = {
+        'extra/robots.txt': {'path': 'robots.txt'},
+        }
+
+__ internal_metadata__
+.. _group name notation:
+   http://docs.python.org/3/library/re.html#regular-expression-syntax
+
+供稿设置
+========
 
 By default, Pelican uses Atom feeds. However, it is also possible to use RSS
 feeds if you prefer.
@@ -396,8 +443,8 @@ Address". In this example, the "Original Feed" would be
 `http://www.example.com/thymefeeds/main.xml` and the "Feed Address" suffix
 would be `thymefeeds/main.xml`.
 
-Pagination
-==========
+分页
+====
 
 The default behaviour of Pelican is to list all the article titles along
 with a short description on the index page. While it works pretty well
@@ -417,8 +464,8 @@ Setting name (default value)                        What does it do?
                                                     pagination.
 ================================================    =====================================================
 
-Tag cloud
-=========
+标签云
+======
 
 If you want to generate a tag cloud with all your tags, you can do so using the
 following settings.
@@ -442,8 +489,8 @@ The default theme does not support tag clouds, but it is pretty easy to add::
 You should then also define a CSS style with the appropriate classes (tag-0 to tag-N, where
 N matches `TAG_CLOUD_STEPS` -1).
 
-Translations
-============
+翻译
+====
 
 Pelican offers a way to translate articles. See the :doc:`Getting Started <getting_started>` section for
 more information.
@@ -458,8 +505,8 @@ Setting name (default value)                             What does it do?
 
 .. [3] %s is the language
 
-Ordering content
-=================
+内容排序
+========
 
 ================================================    =====================================================
 Setting name (default value)                        What does it do?
@@ -470,8 +517,8 @@ Setting name (default value)                        What does it do?
                                                     alphabetical order; default lists alphabetically.)
 ================================================    =====================================================
 
-Themes
-======
+主题
+====
 
 Creating Pelican themes is addressed in a dedicated section (see :ref:`theming-pelican`).
 However, here are the settings that are related to themes.
@@ -548,8 +595,8 @@ adding the following to your configuration::
 
     CSS_FILE = "wide.css"
 
-Example settings
-================
+设置样例
+========
 
 .. literalinclude:: ../samples/pelican.conf.py
     :language: python

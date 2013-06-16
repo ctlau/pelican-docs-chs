@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Settings &mdash; Pelican 3.2 documentation</title>
+    <title>设置 &mdash; Pelican 3.2 documentation</title>
     
     <link rel="stylesheet" href="_static/pelican.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Pelican 3.2 documentation" href="index.html" />
-    <link rel="next" title="How to create themes for Pelican" href="themes.html" />
-    <link rel="prev" title="Getting started" href="getting_started.html" /> 
+    <link rel="next" title="怎样给Pelican创建主题" href="themes.html" />
+    <link rel="prev" title="入门指南" href="getting_started.html" /> 
   </head>
   <body>
   
@@ -36,8 +36,8 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <div class="section" id="settings">
-<h1>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>设置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Pelican is configurable thanks to a configuration file you can pass to
 the command line:</p>
 <div class="highlight-python"><pre>$ pelican -s path/to/your/settingsfile.py path</pre>
@@ -54,8 +54,8 @@ or relative to the configuration file.</p>
 <p>The settings you define in the configuration file will be passed to the
 templates, which allows you to use your settings to add site-wide content.</p>
 <p>Here is a list of settings for Pelican:</p>
-<div class="section" id="basic-settings">
-<h2>Basic settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>基本设置<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -117,22 +117,23 @@ The default value will only extract the date from
 the filename.
 For example, if you would like to extract both the
 date and the slug, you could set something like:
-<tt class="docutils literal"><span class="pre">'(?P&lt;date&gt;\d{4}-\d{2}-\d{2})_(?P&lt;slug&gt;.*)'</span></tt>.</td>
+<tt class="docutils literal"><span class="pre">'(?P&lt;date&gt;\d{4}-\d{2}-\d{2})_(?P&lt;slug&gt;.*)'</span></tt>.
+See <a class="reference internal" href="#path-metadata"><em>Path元数据</em></a>.</td>
 </tr>
 <tr class="row-even"><td><cite>PATH_METADATA</cite> (<tt class="docutils literal"><span class="pre">''</span></tt>)</td>
 <td>Like <tt class="docutils literal"><span class="pre">FILENAME_METADATA</span></tt>, but parsed from a page&#8217;s
-full path relative to the content source directory.</td>
+full path relative to the content source directory.
+See <a class="reference internal" href="#path-metadata"><em>Path元数据</em></a>.</td>
 </tr>
-<tr class="row-odd"><td><cite>DELETE_OUTPUT_DIRECTORY</cite> (<tt class="docutils literal"><span class="pre">False</span></tt>)</td>
+<tr class="row-odd"><td><cite>EXTRA_PATH_METADATA</cite> (<tt class="docutils literal"><span class="pre">{}</span></tt>)</td>
+<td>Extra metadata dictionaries keyed by relative path.
+See <a class="reference internal" href="#path-metadata"><em>Path元数据</em></a>.</td>
+</tr>
+<tr class="row-even"><td><cite>DELETE_OUTPUT_DIRECTORY</cite> (<tt class="docutils literal"><span class="pre">False</span></tt>)</td>
 <td>Delete the output directory, and <strong>all</strong> of its contents, before
 generating new files. This can be useful in preventing older,
 unnecessary files from persisting in your output. However, <strong>this is
 a destructive setting and should be handled with extreme care.</strong></td>
-</tr>
-<tr class="row-even"><td><cite>FILES_TO_COPY</cite> (<tt class="docutils literal"><span class="pre">()</span></tt>)</td>
-<td>A list of files (or directories) to copy from the source (inside the
-content directory) to the destination (inside the output directory).
-For example: <tt class="docutils literal"><span class="pre">(('extra/robots.txt',</span> <span class="pre">'robots.txt'),)</span></tt>.</td>
 </tr>
 <tr class="row-odd"><td><cite>JINJA_EXTENSIONS</cite> (<tt class="docutils literal"><span class="pre">[]</span></tt>)</td>
 <td>A list of any Jinja2 extensions you want to use.</td>
@@ -143,7 +144,7 @@ The dictionary should map the filtername to the filter function.
 For example: <tt class="docutils literal"><span class="pre">{'urlencode':</span> <span class="pre">urlencode_filter}</span></tt>
 See <a class="reference external" href="http://jinja.pocoo.org/docs/api/#custom-filters">Jinja custom filters documentation</a>.</td>
 </tr>
-<tr class="row-odd"><td><cite>LOCALE</cite> (&#8216;&#8217;<a class="footnote-reference" href="#id2" id="id1">[1]</a>)</td>
+<tr class="row-odd"><td><cite>LOCALE</cite> (&#8216;&#8217;<a class="footnote-reference" href="#id4" id="id3">[1]</a>)</td>
 <td>Change the locale. A list of locales can be provided
 here or a single string representing one locale.
 When providing a list, all the locales will be tried
@@ -208,7 +209,7 @@ not. Only set this to <tt class="docutils literal"><span class="pre">True</span>
 if you fully understand the effect it can have on links/feeds.</td>
 </tr>
 <tr class="row-odd"><td><cite>PLUGINS</cite> (<tt class="docutils literal"><span class="pre">[]</span></tt>)</td>
-<td>The list of plugins to load. See <a class="reference internal" href="plugins.html#plugins"><em>Plugins</em></a>.</td>
+<td>The list of plugins to load. See <a class="reference internal" href="plugins.html#plugins"><em>插件</em></a>.</td>
 </tr>
 <tr class="row-even"><td><cite>SITENAME</cite> (<tt class="docutils literal"><span class="pre">'A</span> <span class="pre">Pelican</span> <span class="pre">Blog'</span></tt>)</td>
 <td>Your site name</td>
@@ -222,7 +223,7 @@ slash at the end. Example: <tt class="docutils literal"><span class="pre">SITEUR
 </tr>
 <tr class="row-even"><td><cite>TEMPLATE_PAGES</cite> (<tt class="docutils literal"><span class="pre">None</span></tt>)</td>
 <td>A mapping containing template pages that will be rendered with
-the blog entries. See <a class="reference internal" href="#template-pages"><em>Template pages</em></a>.</td>
+the blog entries. See <a class="reference internal" href="#template-pages"><em>模板页面</em></a>.</td>
 </tr>
 <tr class="row-odd"><td><cite>STATIC_PATHS</cite> (<tt class="docutils literal"><span class="pre">['images']</span></tt>)</td>
 <td>The static paths you want to have accessible
@@ -267,14 +268,14 @@ These templates need to use <tt class="docutils literal"><span class="pre">DIREC
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Default is the system locale.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>Default is the system locale.</td></tr>
 </tbody>
 </table>
-<div class="section" id="url-settings">
-<h3>URL settings<a class="headerlink" href="#url-settings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="url">
+<h3>URL设置<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
 <p>The first thing to understand is that there are currently two supported methods
 for URL formation: <em>relative</em> and <em>absolute</em>. Document-relative URLs are useful
 when testing locally, and absolute URLs are reliable and most useful when
@@ -417,16 +418,16 @@ posts.</td>
 <p class="last">When any of the <cite>*_SAVE_AS</cite> settings is set to False, files will not be created.</p>
 </div>
 </div>
-<div class="section" id="timezone">
-<h3>Timezone<a class="headerlink" href="#timezone" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>时区<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>If no timezone is defined, UTC is assumed. This means that the generated Atom
 and RSS feeds will contain incorrect date information if your locale is not UTC.</p>
 <p>Pelican issues a warning in case this setting is not defined, as it was not
 mandatory in previous versions.</p>
 <p>Have a look at <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">the wikipedia page</a> to get a list of valid timezone values.</p>
 </div>
-<div class="section" id="date-format-and-locale">
-<h3>Date format and locale<a class="headerlink" href="#date-format-and-locale" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>日期格式和区域设置<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>If no DATE_FORMATS are set, Pelican will fall back to DEFAULT_DATE_FORMAT. If
 you need to maintain multiple languages with different date formats, you can
 set this dict using the language name (<tt class="docutils literal"><span class="pre">lang</span></tt> metadata in your post content)
@@ -465,7 +466,7 @@ can get a list of available locales via the <tt class="docutils literal"><span c
 </div>
 </div>
 <div class="section" id="template-pages">
-<span id="id3"></span><h2>Template pages<a class="headerlink" href="#template-pages" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>模板页面<a class="headerlink" href="#template-pages" title="Permalink to this headline">¶</a></h2>
 <p>If you want to generate custom pages besides your blog entries, you can point
 any Jinja2 template file with a path pointing to the file and the destination
 path for the generated file.</p>
@@ -477,8 +478,43 @@ your resume, and a contact page — you could have:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="feed-settings">
-<h2>Feed settings<a class="headerlink" href="#feed-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="path">
+<span id="path-metadata"></span><h2>Path元数据<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h2>
+<p>Not all metadata needs to be <a class="reference external" href="internal_metadata__">embedded in source file itself</a>.  For
+example, blog posts are often named following a <tt class="docutils literal"><span class="pre">YYYY-MM-DD-SLUG.rst</span></tt>
+pattern, or nested into <tt class="docutils literal"><span class="pre">YYYY/MM/DD-SLUG</span></tt> directories.  To extract
+metadata from the filename or path, set <tt class="docutils literal"><span class="pre">FILENAME_METADATA</span></tt> or
+<tt class="docutils literal"><span class="pre">PATH_METADATA</span></tt> to regular expressions that use Python&#8217;s <a class="reference external" href="http://docs.python.org/3/library/re.html#regular-expression-syntax">group name
+notation</a> <tt class="docutils literal"><span class="pre">(?P&lt;name&gt;…)</span></tt>.  If you want to attach additional metadata
+but don&#8217;t want to encode it in the path, you can set
+<tt class="docutils literal"><span class="pre">EXTRA_PATH_METADATA</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;relative/path/to/file-1&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;key-1a&#39;</span><span class="p">:</span> <span class="s">&#39;value-1a&#39;</span><span class="p">,</span>
+        <span class="s">&#39;key-1b&#39;</span><span class="p">:</span> <span class="s">&#39;value-1b&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="s">&#39;relative/path/to/file-2&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;key-2&#39;</span><span class="p">:</span> <span class="s">&#39;value-2&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>This can be a convenient way to shift the installed location of a
+particular file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Take advantage of the following defaults</span>
+<span class="c"># STATIC_SAVE_AS = &#39;{path}&#39;</span>
+<span class="c"># STATIC_URL = &#39;{path}&#39;</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">:</span> <span class="s">&#39;robots.txt&#39;</span><span class="p">},</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>供稿设置<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>By default, Pelican uses Atom feeds. However, it is also possible to use RSS
 feeds if you prefer.</p>
 <p>Pelican generates category feeds as well as feeds for all your articles. It does
@@ -519,7 +555,7 @@ language.</td>
 this feed will contain all posts regardless of their
 language.</td>
 </tr>
-<tr class="row-odd"><td><cite>CATEGORY_FEED_ATOM</cite> (&#8216;feeds/%s.atom.xml&#8217;<a class="footnote-reference" href="#id5" id="id4">[2]</a>)</td>
+<tr class="row-odd"><td><cite>CATEGORY_FEED_ATOM</cite> (&#8216;feeds/%s.atom.xml&#8217;<a class="footnote-reference" href="#id11" id="id10">[2]</a>)</td>
 <td>Where to put the category Atom feeds.</td>
 </tr>
 <tr class="row-even"><td><cite>CATEGORY_FEED_RSS</cite> (<tt class="docutils literal"><span class="pre">None</span></tt>, i.e. no RSS)</td>
@@ -539,10 +575,10 @@ quantity is unrestricted by default.</td>
 </tbody>
 </table>
 <p>If you don&#8217;t want to generate some or any of these feeds, set the above variables to <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id11" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>%s is the name of the category.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[2]</a></td><td>%s is the name of the category.</td></tr>
 </tbody>
 </table>
 <div class="section" id="feedburner">
@@ -562,8 +598,8 @@ Address&#8221;. In this example, the &#8220;Original Feed&#8221; would be
 would be <cite>thymefeeds/main.xml</cite>.</p>
 </div>
 </div>
-<div class="section" id="pagination">
-<h2>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2>分页<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>The default behaviour of Pelican is to list all the article titles along
 with a short description on the index page. While it works pretty well
 for small-to-medium blogs, for sites with large quantity of articles it would
@@ -593,8 +629,8 @@ pagination.</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="tag-cloud">
-<h2>Tag cloud<a class="headerlink" href="#tag-cloud" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2>标签云<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>If you want to generate a tag cloud with all your tags, you can do so using the
 following settings.</p>
 <table border="1" class="docutils">
@@ -627,8 +663,8 @@ cloud.</td>
 <p>You should then also define a CSS style with the appropriate classes (tag-0 to tag-N, where
 N matches <cite>TAG_CLOUD_STEPS</cite> -1).</p>
 </div>
-<div class="section" id="translations">
-<h2>Translations<a class="headerlink" href="#translations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2>翻译<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>Pelican offers a way to translate articles. See the <a class="reference internal" href="getting_started.html"><em>Getting Started</em></a> section for
 more information.</p>
 <table border="1" class="docutils">
@@ -645,7 +681,7 @@ more information.</p>
 <tr class="row-even"><td><cite>DEFAULT_LANG</cite> (<tt class="docutils literal"><span class="pre">'en'</span></tt>)</td>
 <td>The default language to use.</td>
 </tr>
-<tr class="row-odd"><td><cite>TRANSLATION_FEED_ATOM</cite> (&#8216;feeds/all-%s.atom.xml&#8217;<a class="footnote-reference" href="#id8" id="id7">[3]</a>)</td>
+<tr class="row-odd"><td><cite>TRANSLATION_FEED_ATOM</cite> (&#8216;feeds/all-%s.atom.xml&#8217;<a class="footnote-reference" href="#id17" id="id16">[3]</a>)</td>
 <td>Where to put the Atom feed for translations.</td>
 </tr>
 <tr class="row-even"><td><cite>TRANSLATION_FEED_RSS</cite> (<tt class="docutils literal"><span class="pre">None</span></tt>, i.e. no RSS)</td>
@@ -653,15 +689,15 @@ more information.</p>
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td>%s is the language</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[3]</a></td><td>%s is the language</td></tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="ordering-content">
-<h2>Ordering content<a class="headerlink" href="#ordering-content" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h2>内容排序<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="48%" />
@@ -684,9 +720,9 @@ alphabetical order; default lists alphabetically.)</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="themes">
-<h2>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h2>
-<p>Creating Pelican themes is addressed in a dedicated section (see <a class="reference internal" href="themes.html#theming-pelican"><em>How to create themes for Pelican</em></a>).
+<div class="section" id="id19">
+<h2>主题<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>Creating Pelican themes is addressed in a dedicated section (see <a class="reference internal" href="themes.html#theming-pelican"><em>怎样给Pelican创建主题</em></a>).
 However, here are the settings that are related to themes.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -722,7 +758,7 @@ other static paths, you can put them here.</td>
 <li>simple (a synonym for &#8220;plain text&#8221; :)</li>
 </ul>
 <p>There are a number of other themes available at <a class="reference external" href="http://github.com/getpelican/pelican-themes">http://github.com/getpelican/pelican-themes</a>.
-Pelican comes with <a class="reference internal" href="pelican-themes.html"><em>pelican-themes</em></a>, a small script for managing themes.</p>
+Pelican comes with <a class="reference internal" href="pelican-themes.html"><em>pelican-themes命令</em></a>, a small script for managing themes.</p>
 <p>You can define your own theme, either by starting from scratch or by duplicating
 and modifying a pre-existing theme. Here is <a class="reference internal" href="themes.html"><em>a guide on how to create your theme</em></a>.</p>
 <p>Following are example ways to specify your preferred theme:</p>
@@ -803,8 +839,8 @@ adding the following to your configuration:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-settings">
-<h2>Example settings<a class="headerlink" href="#example-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h2>设置样例<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 

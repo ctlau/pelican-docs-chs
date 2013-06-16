@@ -1,10 +1,10 @@
-pelican-themes
-##############
+pelican-themes命令
+##################
 
 
 
-Description
-===========
+描述
+====
 
 ``pelican-themes`` is a command line tool for managing themes for Pelican.
 
@@ -37,8 +37,8 @@ Optional arguments:
 
 
 
-Examples
-========
+例子
+====
 
 
 Listing the installed themes
@@ -157,7 +157,7 @@ In this example, the theme ``notmyidea-cms`` is replaced by the theme ``notmyide
 
 
 
-See also
+另请参阅
 ========
 
 -   http://docs.notmyidea.org/alexis/pelican/

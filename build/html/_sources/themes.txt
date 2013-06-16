@@ -1,15 +1,15 @@
 .. _theming-pelican:
 
-How to create themes for Pelican
-################################
+怎样给Pelican创建主题
+#####################
 
 Pelican uses the great `Jinja2 <http://jinja.pocoo.org/>`_ templating engine to
 generate its HTML output. Jinja2 syntax is really simple. If you want to
 create your own theme, feel free to take inspiration from the `"simple" theme
 <https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates>`_.
 
-Structure
-=========
+结构
+====
 
 To make your own theme, you must follow the following structure::
 
@@ -37,8 +37,8 @@ To make your own theme, you must follow the following structure::
   I've just put the mandatory templates here; you can define your own if it helps
   you keep things organized while creating your theme.
 
-Templates and variables
-=======================
+模板和变量
+==========
 
 The idea is to use a simple syntax that you can embed into your HTML pages.
 This document describes which templates should exist in a theme, and which
@@ -47,8 +47,8 @@ variables will be passed to each template at generation time.
 All templates will receive the variables defined in your settings file, if they
 are in all-caps. You can access them directly.
 
-Common variables
-----------------
+公共变量
+--------
 
 All of these settings will be available to all templates.
 
@@ -74,8 +74,8 @@ categories      A list of (category, articles) tuples, containing
 pages           The list of pages
 =============   ===================================================
 
-Sorting
--------
+排序
+----
 
 URL wrappers (currently categories, tags, and authors), have
 comparison methods that allow them to be easily sorted by name::
@@ -88,8 +88,8 @@ command`__ has a number of options.
 __ http://jinja.pocoo.org/docs/templates/#sort
 
 
-Date Formatting
----------------
+日期格式化
+----------
 
 Pelican formats the date with according to your settings and locale 
 (``DATE_FORMATS``/``DEFAULT_DATE_FORMAT``) and provides a 
@@ -105,8 +105,8 @@ to the locale given in your settings::
 .. _datetime: http://docs.python.org/2/library/datetime.html#datetime-objects
 .. _strftime: http://docs.python.org/2/library/datetime.html#strftime-strptime-behavior
 
-index.html
-----------
+首页
+----
 
 This is the home page of your blog, generated at output/index.html.
 
@@ -124,8 +124,8 @@ dates_page              The current page of articles, ordered by date,
 page_name               'index' -- useful for pagination links
 ===================     ===================================================
 
-author.html
--------------
+作者页
+------
 
 This template will be processed for each of the existing authors, with
 output generated at output/author/`author_name`.html.
@@ -150,8 +150,8 @@ page_name               AUTHOR_URL where everything after `{slug}` is
                         removed -- useful for pagination links
 ===================     ===================================================
 
-category.html
--------------
+分类页
+------
 
 This template will be processed for each of the existing categories, with
 output generated at output/category/`category_name`.html.
@@ -176,8 +176,8 @@ page_name               CATEGORY_URL where everything after `{slug}` is
                         removed -- useful for pagination links
 ===================     ===================================================
 
-article.html
--------------
+文章页
+------
 
 This template will be processed for each article, with .html files saved
 as output/`article_name`.html. Here are the specific variables it gets.
@@ -189,8 +189,8 @@ article         The article object to be displayed
 category        The name of the category for the current article
 =============   ===================================================
 
-page.html
----------
+静态页
+------
 
 This template will be processed for each page, with corresponding .html files
 saved as output/`page_name`.html.
@@ -202,8 +202,8 @@ page            The page object to be displayed. You can access its
                 title, slug, and content.
 =============   ===================================================
 
-tag.html
---------
+标签页
+------
 
 This template will be processed for each tag, with corresponding .html files
 saved as output/tag/`tag_name`.html.
@@ -228,8 +228,8 @@ page_name               TAG_URL where everything after `{slug}` is removed
                         -- useful for pagination links
 ===================     ===================================================
 
-Feeds
-=====
+供稿
+====
 
 The feed variables changed in 3.0. Each variable now explicitly lists ATOM or
 RSS in the name. ATOM is still the default. Old themes will need to be updated.
@@ -247,8 +247,8 @@ Here is a complete list of the feed variables::
     TRANSLATION_FEED_RSS
 
 
-Inheritance
-===========
+继承
+====
 
 Since version 3.0, Pelican supports inheritance from the ``simple`` theme, so
 you can re-use the ``simple`` theme templates in your own themes.
@@ -267,8 +267,8 @@ You can also extend templates from the ``simple`` themes in your own themes by u
     {% extends "index.html" %}   <!-- "regular" extending -->
 
 
-Example
--------
+样例
+----
 
 With this system, it is possible to create a theme with just two files.
 
