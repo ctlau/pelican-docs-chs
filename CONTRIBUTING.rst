@@ -1,5 +1,5 @@
-Contribution submission guidelines
-==================================
+贡献提交指南
+============
 
 * Consider whether your new feature might be better suited as a plugin_. Folks
   are usually available in the `#pelican IRC channel`_ if help is needed to
