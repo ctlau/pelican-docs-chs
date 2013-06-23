@@ -4,27 +4,20 @@
 安装Pelican
 ===========
 
-Pelican currently runs best on Python 2.7.x; earlier versions of Python are
-not supported. There is provisional support for Python 3.3, although there may
-be rough edges, particularly with regards to optional 3rd-party components.
+当前 Pelican 最好运行在 Python 2.7.x 上，更早版本的 Python 不被支持。对 Python 3.3 仅是临时地支持，尽管可能有一些未完善的地方，尤其对于可选的第三方组件。
 
-You can install Pelican via several different methods. The simplest is via
-`pip <http://www.pip-installer.org/>`_::
+你可以通过很多种不同的方法安装 Pelican 。最简单的是通过 `pip <http://www.pip-installer.org/>`_::
 
     $ pip install pelican
 
-If you don't have ``pip`` installed, an alternative method is
-``easy_install``::
+如果你尚未安装 ``pip``， 一个替代的方法是 ``easy_install``::
 
     $ easy_install pelican
 
-(Keep in mind that operating systems will often require you to prefix the above
-commands with ``sudo`` in order to install Pelican system-wide.)
+(记住，操作系统经常要求你给上面的命令加上``sudo``前缀，以在整个系统范围内安装 Pelican 。)
 
-While the above is the simplest method, the recommended approach is to create
-a virtual environment for Pelican via virtualenv_ before installing Pelican.
-Assuming you have virtualenv_ installed, you can then open a new terminal
-session and create a new virtual environment for Pelican::
+尽管上面是最简单的方法，但推荐的方法是在安装Pelican之前用 virtualenv_ 为其创建一个虚拟环境。
+假设你已安装 virtualenv_ ，你可以打开一个新的终端会话，然后为Pelican创建一个新的虚拟环境::
 
     $ virtualenv ~/virtualenvs/pelican
     $ cd ~/virtualenvs/pelican
